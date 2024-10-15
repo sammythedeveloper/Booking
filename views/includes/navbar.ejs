@@ -1,0 +1,364 @@
+<!-- <style>
+    .search-btn {
+        background-color: #fe424d;
+        color: #fff;
+        border-radius: 25px;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .search-btn:hover {
+        background-color: #c6000d;
+        color: #fff;
+    }
+
+    .search-btn i {
+        display: inline;
+        margin-right: 0.5rem;
+    }
+
+    .search-input {
+        border-radius: 25px;
+        padding: 0.5rem 3rem;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .search-input:focus {
+        border-color: #fe424d !important;
+        box-shadow: 0 0 0 0.25rem rgba(254, 66, 77, 0.25) !important;
+        outline: none;
+    }
+
+    .nav-item.nav-link {
+        color: #555;
+        transition: color 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+    }
+
+    .nav-item.nav-link:hover {
+        color: #fff !important;
+        background-color: #fe424d;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Profile Icon Dropdown (Hidden on Mobile) */
+    .profile-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .profile-icon {
+        font-size: 1.5rem;
+    color: #fe424d;  
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    }
+
+    .profile-icon:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background: white;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        display: none;
+        flex-direction: column;
+        width: 150px;
+    }
+
+    .dropdown-menu a {
+        text-decoration: none;
+        padding: 10px;
+        color: black;
+        display: block;
+        transition: background 0.2s ease;
+    }
+
+    .dropdown-menu a:hover {
+        background: #fe424d;
+        color: white;
+    }
+
+    .profile-dropdown:hover .dropdown-menu {
+        display: flex;
+    }
+
+    /* Hide Profile Icon on Mobile */
+    @media (max-width: 768px) {
+        .profile-dropdown {
+            display: none;
+        }
+    }
+</style> -->
+
+<!-- <nav class="navbar navbar-expand-md navbar-light bg-body-light border-bottom sticky-top">
+    <a class="navbar-brand" href="/listings">
+        <img src="/src/img/logo.png" alt="Logo" class="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="/listings">Explore</a>
+        </div>
+
+        <div class="navbar-nav ms-auto"> -->
+            <!-- Search Bar -->
+            <!-- <form class="d-flex navbar-nav-form" action="/listings/search" method="GET">
+                <input class="form-control me-2 search-input" type="text" name="query" placeholder="Search Destination"
+                    aria-label="Search">
+                <button class="btn search-btn my-2 my-sm-0" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>Search
+                </button>
+            </form>
+        </div>
+
+        <div class="navbar-nav ms-auto">
+            <div class="nav-link-container">
+                <a class="nav-item nav-link" href="/listings/new">List Indulge</a>
+            </div> -->
+
+            <!-- Mobile View Dropdown (Visible in Mobile) -->
+            <!-- <div class="d-md-none">
+                <% if (currUser) { %>
+                    <a class="nav-item nav-link" href="/profile">Profile</a>
+                    <a class="nav-item nav-link" href="/about">About</a>
+                    <a class="nav-item nav-link" href="/contact">Contact</a>
+                    <a class="nav-item nav-link" href="/logout">Logout</a>
+                <% } else { %>
+                    <a class="nav-item nav-link" href="/login">Login</a>
+                    <a class="nav-item nav-link" href="/signup">Sign Up</a>
+                <% } %>
+            </div> -->
+
+            <!-- Desktop View Profile Icon (Hidden in Mobile) -->
+            <!-- <div class="profile-dropdown d-none d-md-inline">
+                <i class="fa-solid fa-user profile-icon"></i>
+                <div class="dropdown-menu">
+                    <% if (currUser) { %>
+                        <a href="/profile">Profile</a>
+                        <a href="/about">About</a>
+                        <a href="/contact">Contact</a>
+                        <a href="/logout">Logout</a>
+                    <% } else { %>
+                        <a href="/login">Login</a>
+                        <a href="/signup">Sign Up</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</nav>
+
+<!-- Font Awesome for the Profile Icon -->
+<!-- <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script> -->
+
+
+<style>
+    /* Premium Dark Theme Overrides for Navbar */
+    .custom-luxury-nav {
+        background-color: #0f1115 !important; /* Deep obsidian background */
+        border-bottom: 1px solid #23272f !important; /* Subtle minimal edge divider */
+    }
+
+    .search-btn {
+        background-color: #000000;
+        color: #fff;
+        border-radius: 25px;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+    }
+
+    .search-btn:hover {
+        background-color: #891D40;
+        color: #fff;
+    }
+
+    .search-btn i {
+        display: inline;
+        margin-right: 0.5rem;
+    }
+
+    .search-input {
+        background-color: #1a1d24 !important; /* Darker inputs */
+        border: 1px solid #2e3541 !important;
+        color: #ffffff !important;
+        border-radius: 25px;
+        padding: 0.5rem 2rem;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .search-input::placeholder {
+        color: #8892b0 !important;
+    }
+
+    .search-input:focus {
+        border-color: #891D40 !important;
+        box-shadow: 0 0 0 0.25rem rgba(254, 66, 77, 0.25) !important;
+        outline: none;
+    }
+
+    .nav-item.nav-link {
+        color: #c2c9d6 !important; /* Soft white/silver default text */
+        transition: all 0.3s ease;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+    }
+
+    .nav-item.nav-link:hover {
+        color: #fff !important;
+        background-color: #891D40;
+    }
+
+    /* Profile Icon Dropdown Styling */
+    .profile-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .profile-icon {
+        font-size: 1.2rem;
+        color: #ffffff !important;  
+        cursor: pointer;
+        padding: 12px;
+        border-radius: 50%;
+        background-color: #1a1d24; /* Elevated circular container background */
+        border: 1px solid #2e3541;
+        transition: all 0.3s ease;
+    }
+
+    .profile-icon:hover {
+        background-color: #891D40;
+        border-color: #fe424d;
+        transform: scale(1.05);
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        right: 0;
+        top: 110%;
+        background: #161920 !important; /* Deep background to match theme */
+        border: 1px solid #2e3541 !important;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5) !important;
+        border-radius: 12px !important;
+        display: none;
+        flex-direction: column;
+        width: 160px;
+        overflow: hidden;
+        padding: 0.5rem 0;
+    }
+
+    .dropdown-menu a {
+        text-decoration: none;
+        padding: 10px 20px;
+        color: #e2e8f0 !important; /* Soft off-white items */
+        display: block;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+    }
+
+    .dropdown-menu a:hover {
+        background: #891D40 !important;
+        color: white !important;
+        padding-left: 24px; /* Subtle modern shift inward on hover */
+    }
+
+    .profile-dropdown:hover .dropdown-menu {
+        display: flex;
+    }
+
+    /* Custom tweaks for the responsive hamburger menu icon */
+    .navbar-toggler {
+        border-color: #2e3541 !important;
+    }
+    
+    .navbar-toggler-icon {
+        filter: invert(1); /* Forces standard hamburger menu icon to go bright white */
+    }
+
+    /* Hide Profile Icon on Mobile */
+    @media (max-width: 768px) {
+        .profile-dropdown {
+            display: none;
+        }
+    }
+</style>
+
+<!-- Updated structural bootstrap layout targeting navbar-dark parameters -->
+<nav class="navbar navbar-expand-md navbar-dark custom-luxury-nav sticky-top">
+    <a class="navbar-brand" href="/listings">
+        <!-- Logo container -->
+        <img src="/src/img/logo.png" alt="Logo" class="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="/listings">Explore</a>
+        </div>
+
+        <div class="navbar-nav ms-auto">
+            <!-- Search Bar Element -->
+            <form class="d-flex navbar-nav-form" action="/listings/search" method="GET">
+                <input class="form-control me-2 search-input" type="text" name="query" placeholder="Search Destination"
+                    aria-label="Search">
+                <button class="btn search-btn my-2 my-sm-0" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>Search
+                </button>
+            </form>
+        </div>
+
+        <div class="navbar-nav ms-auto align-items-center">
+            <div class="nav-link-container">
+                <a class="nav-item nav-link" href="/listings/new">List Indulge</a>
+            </div>
+
+            <!-- Mobile View Dropdown (Visible in Mobile explicitly) -->
+            <div class="d-md-none w-100 text-center mt-2">
+                <% if (currUser) { %>
+                    <a class="nav-item nav-link d-block mb-1" href="/profile">Profile</a>
+                    <a class="nav-item nav-link d-block mb-1" href="/about">About</a>
+                    <a class="nav-item nav-link d-block mb-1" href="/contact">Contact</a>
+                    <a class="nav-item nav-link d-block mb-1" href="/logout">Logout</a>
+                <% } else { %>
+                    <a class="nav-item nav-link d-block mb-1" href="/login">Login</a>
+                    <a class="nav-item nav-link d-block mb-1" href="/signup">Sign Up</a>
+                <% } %>
+            </div>
+
+            <!-- Desktop View Profile Icon (Hidden in Mobile) -->
+            <div class="profile-dropdown d-none d-md-inline ms-3">
+                <i class="fa-solid fa-user profile-icon"></i>
+                <div class="dropdown-menu">
+                    <% if (currUser) { %>
+                        <a href="/profile">Profile</a>
+                        <a href="/about">About</a>
+                        <a href="/contact">Contact</a>
+                        <a href="/logout">Logout</a>
+                    <% } else { %>
+                        <a href="/login">Login</a>
+                        <a href="/signup">Sign Up</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

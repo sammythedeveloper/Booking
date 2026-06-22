@@ -4,470 +4,611 @@
 
 /* Core Application Wrapper Rules */
 body {
-    font-family: "Plus Jakarta Sans", sans-serif !important;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #0d0f12 !important; /* Premium deep dark backdrop */
-    color: #f3f4f6 !important; /* Clean off-white primary typography */
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #0d0f12 !important; /* Premium deep dark backdrop */
+  color: #f3f4f6 !important; /* Clean off-white primary typography */
 }
 
 .container {
-    flex: 1;
+  flex: 1;
 }
 
 /* Authentication Layout views */
-.login, .signup {
-    margin-bottom: 30px;
+.login,
+.signup {
+  margin-bottom: 30px;
 }
 
 .signup-link {
-    color: #fe424d; 
-    text-decoration: none; 
+  color: #fe424d;
+  text-decoration: none;
 }
 
-.signup-link:hover, .signup-link:focus {
-    color: #c6000d; 
-    text-decoration: none; 
+.signup-link:hover,
+.signup-link:focus {
+  color: #c6000d;
+  text-decoration: none;
 }
 
 /* ==========================================================================
    NAVBAR & HEADER COMPONENT STYLING (DARK OVERRIDES)
    ========================================================================== */
 .navbar {
-    z-index: 1000;
-    margin-left: 10px;
-    margin-right: 10px;
-    height: 5rem;
-    background-color: #0f1115 !important; /* Premium core navbar background */
-    border-bottom: 1px solid #23272f !important;
+  z-index: 1000;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 5rem;
+  background-color: #0f1115 !important; /* Premium core navbar background */
+  border-bottom: 1px solid #23272f !important;
 }
 
 .navbar-brand:hover .logo {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .logo {
-    height: 35px; 
-    width: auto;  
-    transition: transform 0.3s ease; 
+  height: 35px;
+  width: auto;
+  transition: transform 0.3s ease;
 }
 
 .fa-compass {
-    color: #fe424d;
-    font-size: 2rem;
+  color: #fe424d;
+  font-size: 2rem;
 }
 
 .nav-link {
-    color: #e2e8f0 !important; /* Overriding bootstrap default dark values */
+  color: #e2e8f0 !important; /* Overriding bootstrap default dark values */
 }
 
 .navbar-collapse {
-    background-color: #0f1115 !important; /* Dynamic mobile dropdown backing */
+  background-color: #0f1115 !important; /* Dynamic mobile dropdown backing */
 }
 
 .navbar-nav .nav-item {
-    padding: 10px 15px;
+  padding: 10px 15px;
 }
 
 .navbar-nav .nav-link {
-    color: #e2e8f0 !important;
-    padding: 8px 20px;
+  color: #e2e8f0 !important;
+  padding: 8px 20px;
 }
 
 /* ==========================================================================
    RESPONSIVE SEARCH ARCHITECTURE & BREAKPOINTS
    ========================================================================== */
 @media (max-width: 767px) {
-    .navbar-nav .search-input,
-    .navbar-nav .search-btn {
-        display: none;
-    }
+  .navbar-nav .search-input,
+  .navbar-nav .search-btn {
+    display: none;
+  }
 
-    .mobile-search-bar {
-        display: block;
-        margin-top: 1rem;
-        width: 100%;
-    }
+  .mobile-search-bar {
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+  }
 
-    .search-btn {
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-    }
+  .search-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
 
-    .search-input {
-        padding: 0.5rem 2rem;
-        font-size: 1rem;
-        width: 100%;
-    }
+  .search-input {
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    width: 100%;
+  }
 }
 
 @media (max-width: 1024px) {
-    .navbar-nav .navbar-nav-form {
-        display: none;
-    }
-    .mobile-search-bar {
-        display: block;
-        width: 100%;
-    }
+  .navbar-nav .navbar-nav-form {
+    display: none;
+  }
+  .mobile-search-bar {
+    display: block;
+    width: 100%;
+  }
 }
 
 @media (min-width: 1025px) {
-    .mobile-search-bar {
-        display: none;
-    }
+  .mobile-search-bar {
+    display: none;
+  }
 }
 
 /* ==========================================================================
    LUXURY EDITORIAL INDEX HOMEPAGE VIEWS (FILTERS & GRID)
    ========================================================================== */
 #filters {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color: #0d0f12 !important;
-    border-bottom: 1px solid #1f242d !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #0d0f12 !important;
+  border-bottom: 1px solid #1f242d !important;
 }
 
 .filter {
-    margin-right: 2rem;
-    text-align: center;
-    margin-top: 2rem;
-    opacity: 0.65;
-    transition: all 0.3s ease;
-    color: #e5e7eb !important;
+  margin-right: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  opacity: 0.65;
+  transition: all 0.3s ease;
+  color: #e5e7eb !important;
 }
 
 .filter i {
-    color: #ffffff !important;
-    font-size: 1.1rem;
+  color: #ffffff !important;
+  font-size: 1.1rem;
 }
 
 .filter:hover {
-    opacity: 1;
-    cursor: pointer;
-    transform: scale(1.05);
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 .filter p {
-    font-size: 0.8rem;
-    color: #e5e7eb !important;
-    margin-top: 5px;
+  font-size: 0.8rem;
+  color: #e5e7eb !important;
+  margin-top: 5px;
 }
 
 /* Dynamic Interactive Tax Toggle Section */
 .tax-info {
-    display: none;
+  display: none;
 }
 
 .tax-toggle {
-    border: 1px solid #2e3541 !important; /* Sleek structural container edge boundary */
-    border-radius: 1rem;
-    height: 3.25rem;
-    padding: 1rem;
-    margin-left: 3rem;
-    display: flex;
-    align-items: center;
-    background-color: #161a21;
+  border: 1px solid #2e3541 !important; /* Sleek structural container edge boundary */
+  border-radius: 1rem;
+  height: 3.25rem;
+  padding: 1rem;
+  margin-left: 3rem;
+  display: flex;
+  align-items: center;
+  background-color: #161a21;
 }
 
 .tax-toggle .form-check-label {
-    color: #9ca3af !important;
-    font-size: 0.85rem;
+  color: #9ca3af !important;
+  font-size: 0.85rem;
 }
 
 .tax-toggle .form-check-input:checked {
-    background-color: #fe424d;
-    border-color: #fe424d;
+  background-color: #fe424d;
+  border-color: #fe424d;
 }
 
 .tax-toggle .form-check-input:focus {
-    box-shadow: 0 0 0 0.25rem rgba(254, 66, 77, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(254, 66, 77, 0.25);
 }
 
 .tax-toggle .form-check-input {
-    background-color: #2e3541;
-    border-color: #4b5563;
+  background-color: #2e3541;
+  border-color: #4b5563;
 }
 
 /* Mobile Filter Mechanics Overrides */
 @media screen and (max-width: 768px) {
-    #filters {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 1rem;
-    }
+  #filters {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
 
-    #filters::-webkit-scrollbar {
-        display: none;
-    }
+  #filters::-webkit-scrollbar {
+    display: none;
+  }
 
-    .filter {
-        margin-right: 1rem;
-        flex-shrink: 0;
-    }
+  .filter {
+    margin-right: 1rem;
+    flex-shrink: 0;
+  }
 
-    .tax-toggle {
-        margin-top: 1rem;
-        margin-left: 0;
-    }
+  .tax-toggle {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
 }
 
 /* ==========================================================================
    HOMEPAGE DATA RENDERING (PROPERTY LISTING CARDS)
    ========================================================================== */
 .listing-link {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .listing-card1 {
-    border: none !important;
-    border-bottom: 2rem;
-    background: transparent !important;
+  border: none !important;
+  border-bottom: 2rem;
+  background: transparent !important;
 }
 
 .listing-card {
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    border: none !important;
-    background: transparent !important; /* Removes card box outlines entirely */
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  border: none !important;
+  background: transparent !important; /* Removes card box outlines entirely */
 }
 
 .listing-card .card-body {
-    background: transparent !important;
-    color: #ffffff !important;
+  background: transparent !important;
+  color: #ffffff !important;
 }
 
 .listing-card:hover {
-    transform: translateY(-8px);
+  transform: translateY(-8px);
 }
 
 .listing-card:hover img {
-    filter: brightness(0.95);
+  filter: brightness(0.95);
 }
 
 .card-img-top {
-    border-radius: 1rem !important;
-    width: 100% !important;
-    object-fit: cover;
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover;
 }
 
 .card-body {
-    padding: 0;
+  padding: 0;
 }
 
 .card-text {
-    color: #ffffff !important;
+  color: #ffffff !important;
 }
 
 .card-text b {
-    color: #ffffff !important;
-    font-weight: 600;
+  color: #ffffff !important;
+  font-weight: 600;
 }
 
 @media (max-width: 576px) {
-    .card {
-        margin: 0 auto;
-    }
+  .card {
+    margin: 0 auto;
+  }
 }
 
 .card-img-overlay {
-    opacity: 0;
+  opacity: 0;
 }
 
 .card-img-overlay:hover {
-    opacity: 0.05;
-    background-color: white;
+  opacity: 0.05;
+  background-color: white;
 }
 
 /* ==========================================================================
    BUTTON AND SELECTION INTERACTION ENGINES
    ========================================================================== */
-.add-btn, .edit-btn {
-    background-color: #fe424d !important;
-    border: none !important;
-    color: white !important;
+.add-btn,
+.edit-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+  color: white !important;
 }
 
-.edit-btn, .delete-btn {
-    display: inline-block;
-    margin: 5px;
+.edit-btn,
+.delete-btn {
+  display: inline-block;
+  margin: 5px;
 }
 
 .delete-btn {
-    width: 100%;
+  width: 100%;
 }
 
 .btns .btn {
-    width: 100% !important;
-    max-width: 200px;
-    margin: 5px;
+  width: 100% !important;
+  max-width: 200px;
+  margin: 5px;
 }
 
 .btn-primary {
-    background-color: #fe424d !important;
-    border: none !important;
-    display: inline-block;
-    margin-top: 15px;
-    width: 100%;
-    max-width: 200px;
-    color: white !important;
+  background-color: #fe424d !important;
+  border: none !important;
+  display: inline-block;
+  margin-top: 15px;
+  width: 100%;
+  max-width: 200px;
+  color: white !important;
 }
 
 .btn-primary:hover {
-    background-color: #e03b41 !important;
+  background-color: #e03b41 !important;
 }
 
 /* ==========================================================================
    DETAILED PROPERTY SHOW VIEW CHASSIS
    ========================================================================== */
 .show-img {
-    height: 30vh;
-    width: auto; 
-    margin-left: auto; 
-    margin-right: auto; 
-    display: block; 
-    border-radius: 1rem;
+  height: 30vh;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border-radius: 1rem;
 }
 
 .btns {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .show-card {
-    padding-left: 0;
-    padding-right: 0;
-    background: transparent !important;
-    color: #ffffff !important;
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent !important;
+  color: #ffffff !important;
 }
 
 /* Mapbox UI Module settings */
 .map-container {
-    height: 400px;
-    width: 100%;
-    margin: auto;
-    border-radius: 1rem;
-    overflow: hidden;
-    border: 1px solid #1f242d;
+  height: 400px;
+  width: 100%;
+  margin: auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid #1f242d;
 }
 
 .custom-gutter {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(-1 * var(--bs-gutter-y));
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
 }
 
 @media (max-width: 768px) {
-    .starability-slot {
-        display: flex;
-        justify-content: space-between;
-    }
+  .starability-slot {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    .card {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .image-container {
-        margin-left: 10px; 
-        margin-right: 10px; 
-    }
+  .card {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .show-img {
-        width: 100%; 
-        height: auto; 
-    }
-    
-    #map {
-        height: 200px;
-    }
+  .image-container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .show-img {
+    width: 100%;
+    height: auto;
+  }
+
+  #map {
+    height: 200px;
+  }
 }
 
 /* ==========================================================================
    ANIMATION KEYFRAMES & UTILITIES (GSAP / AOS SUPPORT)
    ========================================================================== */
 .animate-fade-in {
-    transform: translateY(20px);
+  transform: translateY(20px);
 }
 
 .animate-scale {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .animate-scale:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .animate-pulse {
-    animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .weather-icon {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .weather-icon:hover {
-    transform: rotate(360deg) scale(1.2);
+  transform: rotate(360deg) scale(1.2);
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .animate-float {
-    animation: float 3s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
 }
 
 .mobile-search-bar {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .mobile-search-bar:focus-within {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .search-btn {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .search-btn:hover {
-    transform: translateX(5px);
+  transform: translateX(5px);
 }
 
 /* Global Fontawesome Icon Fallbacks */
-i, .fa-solid, .fa-brands {
-    color: #ffffff;
+i,
+.fa-solid,
+.fa-brands {
+  color: #ffffff;
 }
 
 /* Global Input / Textarea Form field dark overrides */
-.form-control, input, textarea {
-    background-color: #161a21 !important;
-    border: 1px solid #2e3541 !important;
-    color: #ffffff !important;
+.form-control,
+input,
+textarea {
+  background-color: #161a21 !important;
+  border: 1px solid #2e3541 !important;
+  color: #ffffff !important;
 }
 
-.form-control:focus, input:focus, textarea:focus {
-    background-color: #161a21 !important;
-    color: #ffffff !important;
-    border-color: #fe424d !important;
-    box-shadow: 0 0 0 0.25rem rgba(254, 66, 77, 0.25) !important;
+.form-control:focus,
+input:focus,
+textarea:focus {
+  background-color: #161a21 !important;
+  color: #ffffff !important;
+  border-color: #fe424d !important;
+  box-shadow: 0 0 0 0.25rem rgba(254, 66, 77, 0.25) !important;
+}
+
+/* ==========================================================================
+   STAY INDULGENT FOOTER (LUXURY DARK REFINED)
+   ========================================================================== */
+
+.stay-indulgent-footer {
+  background-color: #0f1115;
+  border-top: 1px solid #23272f;
+}
+
+/* BRAND */
+.brand-title {
+  color: #ffd700;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.brand-tagline {
+  color: rgba(255, 255, 255, 0.75) !important;
+  line-height: 1.8;
+}
+
+/* HEADINGS */
+.footer-heading {
+  color: #ffd700;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+}
+
+/* LINKS */
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a,
+.footer-contact-item a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-contact-item a:hover {
+  color: #ffd700;
+}
+
+/* SOCIAL ICONS */
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-socials a {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #ffd700;
+  transform: translateY(-3px);
+}
+
+/* INPUT FIELD */
+.custom-input {
+  background-color: #161a21 !important;
+  border: 1px solid #2e3541 !important;
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+}
+
+.custom-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.custom-input:focus {
+  border-color: #ffd700 !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.15) !important;
+}
+
+.custom-input::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+/* BUTTON (luxury inverse interaction) */
+.custom-submit-btn {
+  background-color: #ffd700;
+  border: 1px solid #ffd700;
+  color: #0f1115;
+  transition: all 0.3s ease;
+}
+
+.custom-submit-btn i {
+  color: #0f1115;
+  transition: color 0.3s ease;
+}
+
+/* hover = invert */
+.custom-submit-btn:hover {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+.custom-submit-btn:hover i {
+  color: #ffffff;
+}
+
+/* DIVIDER */
+.footer-divider {
+  border-color: rgba(255, 255, 255, 0.15);
+  opacity: 1;
 }

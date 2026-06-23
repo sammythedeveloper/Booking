@@ -312,17 +312,18 @@ body {
 }
 
 .btn-primary {
-  background-color: #fe424d !important;
+  background-color:#ffd700  !important;
   border: none !important;
   display: inline-block;
   margin-top: 15px;
   width: 100%;
   max-width: 200px;
-  color: white !important;
+  color: black !important;
 }
 
 .btn-primary:hover {
-  background-color: #e03b41 !important;
+  background-color:  white  !important;
+  color:#ffd700 ;
 }
 
 /* ==========================================================================

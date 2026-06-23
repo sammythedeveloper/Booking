@@ -25,7 +25,7 @@
             <p class="card-text">Price: $ <%= listing.price.toLocaleString("en-US") %></p>
             <p class="card-text">Location: <%= listing.location %></p>
             <p class="card-text">Country: <%= listing.country %></p>
-            <p class="card-text">Owner: <i><%= listing.owner.username %></i></p>
+            <p class="card-text">Owner: <i><%= listing.owner?.username || "SamtheDev" %></i></p>
         </div>
     </div>
 
@@ -106,7 +106,7 @@
     </div>
 
     <!-- Map Section -->
-    <div class="col-12 col-md-6 offset-md-3 mb-3 animate-fade-in">
+    <div class="col-12 col-md-6 offset-md-3 mb-3 animate-fade-in card-body ">
         <h3>Where you'll be</h3>
         <div id="map" style="height: 400px;"></div>
         <hr>

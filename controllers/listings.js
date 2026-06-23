@@ -5,6 +5,7 @@ const mapToken = process.env.MAP_TOKEN; // From .env file
 const weatherApiKey = process.env.OPENWEATHER_API_KEY; // OpenWeather API Key from .env
 const weatherUrl = process.env.OPENWEATHER_URL; // OpenWeather API URL from .env
 const geocodingClient = mbxgeocoding({ accessToken: mapToken });
+const DEFAULT_OWNER_ID = "SamtheDev";
 
 module.exports.index = async (req, res) => {
   try {
@@ -95,7 +96,7 @@ module.exports.createListing = async (req, res, next) => {
 
     const newListing = new Listing({
       ...req.body.listing,
-      owner: req.user._id,
+      owner: req.user._id || DEFAULT_OWNER_ID,
       image: { url: imageUrl },
       geometry,
     });

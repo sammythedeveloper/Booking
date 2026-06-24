@@ -351,6 +351,375 @@
 
 // module.exports = { data: sampleListings };
 
+// ************************************************************
+
+// const sampleListings = [
+//   {
+//     title: "The Obsidian Mirror Prism",
+//     description:
+//       "A breathtaking, fully mirrored glass cabin hidden high in the pine forests. The exterior completely reflects nature, making the structure invisible from the outside. Features a stargazing roof and a private volcanic stone hot tub.",
+//     price: 1420,
+//     location: "Svolvær, Lofoten",
+//     country: "Norway",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1724873299560-355df1871c09?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "Amalfi Cliffside Infinity Estate",
+//     description:
+//       "Carved directly into the sheer rock face overlooking the Mediterranean. This architectural masterpiece features soaring 20-foot ceilings, an infinity pool that bleeds into the horizon, and private lemon grove pathways leading to the sea.",
+//     price: 850,
+//     location: "Positano, Amalfi Coast",
+//     country: "Italy",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1566682364859-f92effc37fe6?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "The Aero-Pod Luxury Converted Jet",
+//     description:
+//       "Sleep inside a completely stripped and reimagined vintage 1970s commercial airliner permanently grounded atop a jungle ridge. The cockpit has been turned into a high-end hot tub lounge looking out over the canopy.",
+//     price: 310,
+//     location: "Manuel Antonio",
+//     country: "Costa Rica",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1637247837220-139790fcc3a6?q=80&w=2251&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "Sub-Oceanic Coral Suite",
+//     description:
+//       "An unbelievable architectural wonder submerged 15 feet beneath the ocean surface. Fall asleep to panoramic views of live coral reefs, sea turtles, and manta rays swimming right past your reinforced glass bedroom walls.",
+//     price: 1200,
+//     location: "Rangali Island",
+//     country: "Maldives",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "Kyoto Bamboo Forest Sanctuary",
+//     description:
+//       "A meticulously restored 300-year-old traditional Machiya townhome tucked away inside a private bamboo grove. Experience authentic tatami rooms, a minimalist rock Zen garden, and a private outdoor hinoki wood bath.",
+//     price: 280,
+//     location: "Arashiyama, Kyoto",
+//     country: "Japan",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1741851373866-f73721697fc2?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "The Copper Dome Desert Oasis",
+//     description:
+//       "An eco-futuristic off-grid dome structure clad in raw copper plating that glows red at sunset. Located deep in the high desert, it offers unparalleled milky way views, brutalist concrete interiors, and a hidden plunge pool.",
+//     price: 390,
+//     location: "Joshua Tree, California",
+//     country: "United States",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1707190205003-a0e210376dcf?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "Monolithic Brutalist Rainforest Villa",
+//     description:
+//       "An architectural marvel blending raw exposed concrete with overhanging tropical flora. This multi-level open-air villa cuts straight through the jungle canopy and features a dramatic 3-story internal waterfall.",
+//     price: 540,
+//     location: "Ubud, Bali",
+//     country: "Indonesia",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1721222203626-b3ec87ddcb6d?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "The Santorini Caldera Edge Cave",
+//     description:
+//       "A traditional Cycladic cave dwelling completely hollowed out inside the volcanic cliffside. Whitewashed walls contrast beautifully with a deep sapphire indoor cave pool that opens straight out onto the Aegean sea view.",
+//     price: 620,
+//     location: "Oia, Santorini",
+//     country: "Greece",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1604145195376-e2c8195adf29?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "Neo-Gothic Clocktower Loft",
+//     description:
+//       "Live inside the historic mechanisms of a massive Victorian clocktower. Spanning four industrial-chic stories, the main bedroom sits directly behind the giant, glowing glass clock face overlooking the city skyline.",
+//     price: 450,
+//     location: "St Pancras, London",
+//     country: "United Kingdom",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1686002166472-9e9455e30268?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "Patagonian Glass Geo-Sphere",
+//     description:
+//       "A clear geodesic luxury pod anchored on an isolated cliff face at the edge of the world. Brave the elements while warm inside under luxury furs, staring directly at the jagged peaks of Mount Fitz Roy.",
+//     price: 490,
+//     location: "El Chaltén, Patagonia",
+//     country: "Argentina",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1698005631633-eb1240b509c2?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "Sacred Valley Suspended Capsule",
+//     description:
+//       "An adrenaline-fueled luxury pod crafted from aerospace aluminum, bolted thousands of feet up a sheer mountain wall. Dine under the stars with a 300-degree bird's-eye view of the ancient Inca kingdom below.",
+//     price: 580,
+//     location: "Cuzco, Sacred Valley",
+//     country: "Peru",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1593053272490-e0ed6d6a42c5?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "The Glass A-Frame Greenhouse",
+//     description:
+//       "A structural masterpiece made entirely of iron and double-paned glass. Sleep directly under the Northern Lights while surrounded by an internal climate-controlled tropical botanical garden in the freezing subarctic.",
+//     price: 340,
+//     location: "Reykjavík Outskirts",
+//     country: "Iceland",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1517253259615-dff3842d2544?q=80&w=2180&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "Kasbah Mirage Desert Pavilion",
+//     description:
+//       "A stunning modern interpretation of traditional Moroccan architecture rising out of rolling sand dunes. Features hand-carved stone archways, courtyard fire pits, and a private oasis plunge pool.",
+//     price: 410,
+//     location: "Merzouga, Sahara Desert",
+//     country: "Morocco",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1757439402375-2f2a4ab0dc75?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "The Floating Bamboo Pavilion",
+//     description:
+//       "An architectural marvel constructed completely of curved sustainable giant bamboo, floating gently on a calm freshwater lagoon. Open-air living spaces let you dive straight into crystal clear waters from bed.",
+//     price: 290,
+//     location: "El Nido, Palawan",
+//     country: "Philippines",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1676089775678-f81f7253103e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "Medieval Castle Keep Tower",
+//     description:
+//       "Step back in time inside a fully restored, exclusive 12th-century stone fortification tower. Climb winding stone staircases to your private parapet rooftop offering sweeping views of the French wine valleys.",
+//     price: 670,
+//     location: "Dordogne Valley",
+//     country: "France",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1527149172837-f9f324bbb97b?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "The Underground Hobbit Sanctuary",
+//     description:
+//       "An enchanting earth-sheltered home built directly into the side of a rolling green hill. Features a massive round oak doorway, exposed wooden beam supports, and a cozy fieldstone fireplace.",
+//     price: 250,
+//     location: "Matamata, Waikato",
+//     country: "New Zealand",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1729048563795-b001db99209f?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "High-Canopy Redwood Treehouse",
+//     description:
+//       "Suspended 150 feet above the forest floor between three ancient giant sequoia trees. Accessible via a secure multi-tiered suspension bridge system, complete with an open-air cedar hot tub in the trees.",
+//     price: 380,
+//     location: "Big Sur, California",
+//     country: "United States",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1672278865602-d535af563e23?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "Reykjavík Geometric Eco-Cabin",
+//     description:
+//       "A striking minimalist polygon structure utilizing sustainable geothermal heating. Huge floor-to-ceiling geometric glass facets look out directly over vast, moss-covered black lava fields.",
+//     price: 320,
+//     location: "Selfoss, Golden Circle",
+//     country: "Iceland",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1645020456013-c4e693da0bbf?q=80&w=2346&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "The Floating Houseboat Palace",
+//     description:
+//       "A highly ornate, multi-room cedar houseboat docked on a majestic mountain lake. Features intricate wood carvings, velvet tapestry lounges, and a private rooftop sun terrace for mountain watching.",
+//     price: 220,
+//     location: "Dal Lake, Srinagar",
+//     country: "India",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1724947053227-2335bf21d0ae?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "The Brutalist Monolithic Box",
+//     description:
+//       "A structural concrete monolith cantilevered out over a dramatic coastal cliffside. Stripped of all distractions, the design focuses purely on raw stone textures, massive steel structures, and the crashing waves below.",
+//     price: 730,
+//     location: "Cape Town Coast",
+//     country: "South Africa",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1549295990-ad4f7cd10652?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "Vintage Converted Windmill",
+//     description:
+//       "Sleep inside a piece of functioning historical engineering. This beautifully updated 18th-century traditional windmill features exposed wooden machinery wheels, cozy circular rooms, and views over endless tulip fields.",
+//     price: 190,
+//     location: "Haarlem, North Holland",
+//     country: "Netherlands",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1541435469116-8ce8ccc4ff85?q=80&w=2294&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "The Jungle Cenote Hideaway",
+//     description:
+//       "A hidden concrete luxury villa constructed around a private, limestone sinkhole pool (cenote). Wake up to freshwater swimming steps from your bed, surrounded by hanging vines and wild jungle ferns.",
+//     price: 460,
+//     location: "Tulum, Quintana Roo",
+//     country: "Mexico",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1501855901885-8b29fa615daf?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "The Arctic Ice Floating Dome",
+//     description:
+//       "A heavily insulated, high-tech glass dome structure anchored to a floating wooden dock system on an ice fjord. Watch massive icebergs float safely past your bedroom window under a midnight sun.",
+//     price: 890,
+//     location: "Ilulissat Fjord",
+//     country: "Greenland",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1636743743452-0b82ed31cd0c?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "Andalucian Cave Eco-Hacienda",
+//     description:
+//       "A masterfully updated whitewashed cave estate burrowed deep inside a mountain ridge. Naturally climate-controlled at a perfect temperature year-round, featuring rustic terracotta tile accents and private olive grove views.",
+//     price: 180,
+//     location: "Granada, Andalucia",
+//     country: "Spain",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1614634495973-216b0bbd464e?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "The Emerald Canopy Tree Pavilion",
+//     description:
+//       "A multi-level architectural pavilion built with local sustainable materials, hoisted deep in culture. Complete with mesh lounge hammocks suspended over the open air floor.",
+//     price: 340,
+//     location: "Addis Ababa",
+//     country: "Ethiopia",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1775743241025-5d354dcefcd6?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "The Copper-Clad Alpine Loft",
+//     description:
+//       "A sharp modern cabin completely clad in dark treated copper sheets designed to withstand intense winter conditions. Features massive double-height glass windows framing panoramic views of the Matterhorn.",
+//     price: 520,
+//     location: "Zermatt, Swiss Alps",
+//     country: "Switzerland",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1723119832675-0031e0f0408c?q=80&w=2146&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "Savannah Luxury Horizon Lodge",
+//     description:
+//       "A canvas-and-timber luxury suite elevated on a wooden platform overlooking a major watering hole. Watch elephants, giraffes, and lions gather from the safety of your private canvas deck and plunge pool.",
+//     price: 980,
+//     location: "Serengeti National Park",
+//     country: "Tanzania",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://plus.unsplash.com/premium_photo-1697730165391-265e1b94d550?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "The Floating Glass Lake Pavilion",
+//     description:
+//       "A sleek, steel-framed minimalist glass box anchored right out in the middle of a glassy mountain lake. Accessible only by a private wooden rowboat, offering complete and total off-grid isolation.",
+//     price: 310,
+//     location: "Lake Tekapo",
+//     country: "New Zealand",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1692017827893-f97d95397b49?q=80&w=2160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "The Industrial Boiler Room Loft",
+//     description:
+//       "A dramatic 3-story industrial loft built inside a historic, defunct brick factory powerhouse. Features original rusted iron pipes, massive exposed brick accent walls, and a private industrial steel rooftop terrace.",
+//     price: 260,
+//     location: "Brooklyn, New York",
+//     country: "United States",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1577701759165-d24b1c4b51de?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+//   {
+//     title: "Ancient Olive Mill Compound",
+//     description:
+//       "A completely secluded stone estate built out of the structural ruins of a 600-year-old historic olive pressing mill. Features original giant grinding stone monuments, sun-baked clay stone patios, and an infinity pool.",
+//     price: 430,
+//     location: "Crete Countryside",
+//     country: "Greece",
+//     image: {
+//       filename: "listingimage",
+//       url: "https://images.unsplash.com/photo-1568241076564-b7ccd36912a0?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//     },
+//   },
+// ];
+
+// module.exports = { data: sampleListings };
+
+
+
 const sampleListings = [
   {
     title: "The Obsidian Mirror Prism",
@@ -363,6 +732,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1724873299560-355df1871c09?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [14.5682, 68.2343] },
   },
   {
     title: "Amalfi Cliffside Infinity Estate",
@@ -375,6 +745,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1566682364859-f92effc37fe6?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [14.4850, 40.6281] },
   },
   {
     title: "The Aero-Pod Luxury Converted Jet",
@@ -387,6 +758,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1637247837220-139790fcc3a6?q=80&w=2251&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [-84.1540, 9.3920] },
   },
   {
     title: "Sub-Oceanic Coral Suite",
@@ -399,6 +771,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [72.7154, 3.6192] },
   },
   {
     title: "Kyoto Bamboo Forest Sanctuary",
@@ -411,6 +784,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1741851373866-f73721697fc2?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [135.6762, 35.0157] },
   },
   {
     title: "The Copper Dome Desert Oasis",
@@ -423,6 +797,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1707190205003-a0e210376dcf?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [-116.3131, 34.1356] },
   },
   {
     title: "Monolithic Brutalist Rainforest Villa",
@@ -435,6 +810,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1721222203626-b3ec87ddcb6d?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [115.2625, -8.5069] },
   },
   {
     title: "The Santorini Caldera Edge Cave",
@@ -447,6 +823,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1604145195376-e2c8195adf29?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [25.3753, 36.4618] },
   },
   {
     title: "Neo-Gothic Clocktower Loft",
@@ -459,6 +836,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1686002166472-9e9455e30268?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [-0.1251, 51.5302] },
   },
   {
     title: "Patagonian Glass Geo-Sphere",
@@ -471,6 +849,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1698005631633-eb1240b509c2?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [-72.8856, -49.3314] },
   },
   {
     title: "Sacred Valley Suspended Capsule",
@@ -483,6 +862,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1593053272490-e0ed6d6a42c5?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [-71.9785, -13.5320] },
   },
   {
     title: "The Glass A-Frame Greenhouse",
@@ -495,6 +875,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1517253259615-dff3842d2544?q=80&w=2180&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [-21.8277, 64.1265] },
   },
   {
     title: "Kasbah Mirage Desert Pavilion",
@@ -507,6 +888,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1757439402375-2f2a4ab0dc75?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [-4.0134, 31.0984] },
   },
   {
     title: "The Floating Bamboo Pavilion",
@@ -519,6 +901,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1676089775678-f81f7253103e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [119.3934, 11.1954] },
   },
   {
     title: "Medieval Castle Keep Tower",
@@ -531,6 +914,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1527149172837-f9f324bbb97b?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [1.0208, 44.8819] },
   },
   {
     title: "The Underground Hobbit Sanctuary",
@@ -543,6 +927,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1729048563795-b001db99209f?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [175.7725, -37.8590] },
   },
   {
     title: "High-Canopy Redwood Treehouse",
@@ -555,6 +940,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1672278865602-d535af563e23?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [-121.8081, 36.2704] },
   },
   {
     title: "Reykjavík Geometric Eco-Cabin",
@@ -567,6 +953,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1645020456013-c4e693da0bbf?q=80&w=2346&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [-20.9971, 63.9335] },
   },
   {
     title: "The Floating Houseboat Palace",
@@ -579,6 +966,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1724947053227-2335bf21d0ae?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [74.8485, 34.1114] },
   },
   {
     title: "The Brutalist Monolithic Box",
@@ -591,6 +979,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1549295990-ad4f7cd10652?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [18.4241, -33.9249] },
   },
   {
     title: "Vintage Converted Windmill",
@@ -603,6 +992,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1541435469116-8ce8ccc4ff85?q=80&w=2294&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [4.6389, 52.3874] },
   },
   {
     title: "The Jungle Cenote Hideaway",
@@ -615,6 +1005,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1501855901885-8b29fa615daf?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [-87.4655, 20.2114] },
   },
   {
     title: "The Arctic Ice Floating Dome",
@@ -627,6 +1018,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1636743743452-0b82ed31cd0c?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [-51.0722, 69.2089] },
   },
   {
     title: "Andalucian Cave Eco-Hacienda",
@@ -639,6 +1031,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1614634495973-216b0bbd464e?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [-3.5986, 37.1773] },
   },
   {
     title: "The Emerald Canopy Tree Pavilion",
@@ -651,6 +1044,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1775743241025-5d354dcefcd6?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [38.7578, 8.9806] },
   },
   {
     title: "The Copper-Clad Alpine Loft",
@@ -663,6 +1057,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1723119832675-0031e0f0408c?q=80&w=2146&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [7.7491, 46.0207] },
   },
   {
     title: "Savannah Luxury Horizon Lodge",
@@ -675,6 +1070,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://plus.unsplash.com/premium_photo-1697730165391-265e1b94d550?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [34.8333, -2.1540] },
   },
   {
     title: "The Floating Glass Lake Pavilion",
@@ -687,6 +1083,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1692017827893-f97d95397b49?q=80&w=2160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [170.4795, -43.8845] },
   },
   {
     title: "The Industrial Boiler Room Loft",
@@ -699,6 +1096,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1577701759165-d24b1c4b51de?q=80&w=2148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [-73.9442, 40.6782] },
   },
   {
     title: "Ancient Olive Mill Compound",
@@ -711,6 +1109,7 @@ const sampleListings = [
       filename: "listingimage",
       url: "https://images.unsplash.com/photo-1568241076564-b7ccd36912a0?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    geometry: { type: "Point", coordinates: [24.8093, 35.2401] },
   },
 ];
 

@@ -4,7 +4,6 @@ const axios = require("axios");
 const mapToken = process.env.MAP_TOKEN; // From .env file
 const weatherApiKey = process.env.OPENWEATHER_API_KEY; // OpenWeather API Key from .env
 const weatherUrl = process.env.OPENWEATHER_URL; // OpenWeather API URL from .env
-const geocodingClient = mbxgeocoding({ accessToken: mapToken });
 const DEFAULT_OWNER_ID = "SamtheDev";
 
 module.exports.index = async (req, res) => {

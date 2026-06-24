@@ -36,9 +36,18 @@ require("dotenv").config({ path: "../.env" });
 // DB Connection
 const connectDB = async () => {
   try {
-    // This will pull the MONGO_URI from your .env file in the parent folder
-    await mongoose.connect(process.env.MONGO_URI);
-    console.log("MongoDB Connected Successfully...");
+    // 1. Force the database to use 'booking_app' even if the .env string forgot it
+    let uri = process.env.MONGO_URI;
+    
+    // If the URI doesn't explicitly name a database, append booking_app before the options query parameters
+    if (uri.includes("mongodb.net/`") || uri.endsWith("mongodb.net/")) {
+        uri = uri.replace("mongodb.net/", "mongodb.net/booking_app");
+    } else if (uri.includes("mongodb.net/?") || uri.includes("mongodb.net/?")) {
+        uri = uri.replace("mongodb.net/?", "mongodb.net/booking_app?");
+    }
+
+    await mongoose.connect(uri);
+    console.log("MongoDB Connected Successfully to folder: booking_app...");
   } catch (err) {
     console.error("Error connecting to MongoDB:", err.message);
     process.exit(1);
@@ -49,20 +58,21 @@ connectDB();
 
 const initDB = async () => {
   try {
-    // 1. Wipe out existing listings
+    // Wipe out existing listings
     await Listing.deleteMany({});
-    
-    // 2. Map through the listings to add BOTH the owner and the required geometry fields
+
+    // Map through listings cleanly
     const seedData = initData.data.map((obj) => ({
       ...obj,
-      owner: "67461f7a5f28b23a7030e4e4", // Keeps default setup
-      geometry: { type: "Point", coordinates: [0, 0] } // Fixes the missing geometry crash!
+      owner: "67461f7a5f28b23a7030e4e4", 
+      // If obj.geometry exists from data.js, use it! Otherwise, fall back to a default location
+      geometry: obj.geometry && obj.geometry.coordinates ? obj.geometry : { type: "Point", coordinates: [14.5682, 68.2343] }
     }));
 
-    // 3. Insert into Atlas cloud
+    // Insert into Atlas cloud
     await Listing.insertMany(seedData);
-    console.log("Data was initialized successfully with geometries!");
-    
+    console.log("Database seeded successfully 🚀");
+
     // Close connection when done
     mongoose.connection.close();
   } catch (err) {

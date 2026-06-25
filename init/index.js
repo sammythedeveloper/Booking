@@ -64,7 +64,7 @@ const initDB = async () => {
     // Map through listings cleanly
     const seedData = initData.data.map((obj) => ({
       ...obj,
-      owner: "67461f7a5f28b23a7030e4e4", 
+      owner: "6a3d3a641e68737e5f4f6b06", 
       // If obj.geometry exists from data.js, use it! Otherwise, fall back to a default location
       geometry: obj.geometry && obj.geometry.coordinates ? obj.geometry : { type: "Point", coordinates: [14.5682, 68.2343] }
     }));

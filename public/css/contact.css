@@ -1,29 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
 :root {
-  --primary-color: #fe424d;
-  --primary-dark: #e63946;
-  --text-color: #333;
-  --bg-color: #ffffff;
+  --bg-dark-primary: #0a0a0a;
+  --bg-dark-secondary: #121212;
+  --gold-primary: #d4af37;
+  --gold-focus-muted: #b8902e; /* Muted amber gold for inputs so it's not piercingly bright */
+  --gold-hover: #f3e5ab;
+  --text-muted: #a0a0a0;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-dark-primary) !important;
+  color: #ffffff !important;
 }
 
 .contact-container {
   max-width: 1200px;
-  margin: 20px auto;
+  margin: 40px auto;
   padding: 0 20px;
 }
 
+/* Premium Hero Section */
 .hero-section {
-  background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+  background-image: url("https://images.unsplash.com/photo-1590523277760-06f4e9939d1a?q=80&w=2232&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover;
   background-position: center;
-  border-radius: 10px;
+  border-radius: 6px;
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -36,53 +39,69 @@ body {
 }
 
 .hero-section::before {
-  content: '';
+  content: "";
   position: absolute;
-  border-radius: 10px;
+  border-radius: 6px;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 10, 0.4) 0%,
+    rgba(10, 10, 10, 0.85) 100%
+  );
 }
 
 .title {
   font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--gold-primary);
   margin-bottom: 10px;
   position: relative;
   z-index: 1;
+  letter-spacing: -1px;
 }
 
 .subtitle {
   font-size: 1.2rem;
+  color: #ffffff;
   position: relative;
   z-index: 1;
+  letter-spacing: 0.5px;
 }
 
 .content {
   display: flex;
   gap: 40px;
   margin-top: 40px;
-  animation: fadeIn 1s ease-out 0.5s both;
+  animation: fadeIn 1s ease-out 0.3s both;
 }
 
-.info-section, .form-section {
+.info-section,
+.form-section {
   flex: 1;
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: var(--bg-dark-secondary);
+  padding: 40px;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease;
 }
 
 .info-section h2 {
   font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   margin-bottom: 20px;
-  color: var(--primary-color);
+  color: var(--gold-primary);
 }
 
 .info-section p {
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.8;
+  color: var(--text-muted);
   margin-bottom: 30px;
 }
 
@@ -93,96 +112,131 @@ body {
 .info-item {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-size: 1rem;
+  color: #ffffff;
 }
 
 .info-item i {
   margin-right: 15px;
-  color: var(--primary-color);
+  color: var(--gold-primary);
   font-size: 1.2rem;
+  width: 20px;
+  text-align: center;
 }
 
+input:invalid,
+textarea:invalid {
+  box-shadow: none;
+}
+
+/* Leaflet Map Target Container Styling */
 .map-container {
-  height: 300px;
-  margin-top: 20px;
-  border-radius: 10px;
+  height: 280px;
+  margin-top: 30px;
+  border-radius: 4px;
   overflow: hidden;
+  border: 1px solid var(--border-glow);
+  z-index: 1; /* Ensures leaflet tiles stay clean under layout dropdowns */
 }
 
+/* Floating Input Groups with Toned Down Focus State */
 .form-group {
   position: relative;
-  margin-bottom: 30px;
-}
-
-.form-group input, .form-group textarea {
-  width: 100%;
-  padding: 10px 0;
-  font-size: 1rem;
-  border: none;
-  border-bottom: 2px solid #ddd;
-  outline: none;
-  transition: border-color 0.3s;
-  background-color: transparent;
-}
-
-.form-group label {
-  position: absolute;
-  top: 10px;
-  left: 0;
-  font-size: 1rem;
-  color: #999;
-  transition: all 0.3s ease;
-  pointer-events: none;
-}
-
-.form-group input:focus ~ label,
-.form-group input:valid ~ label,
-.form-group textarea:focus ~ label,
-.form-group textarea:valid ~ label {
-  top: -20px;
-  font-size: 0.8rem;
-  color: var(--primary-color);
+  margin-bottom: 35px;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-bottom-color: var(--primary-color);
+  outline: none !important;
 }
 
-.submit-btn {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 12px 30px;
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 0 8px 0;
   font-size: 1rem;
+  border: none;
+  outline: none;
+  transition: all 0.25s ease-in-out;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: none;
+}
+
+.form-group label {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  font-size: 1rem;
+  color: var(--text-muted);
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  pointer-events: none;
+}
+
+/* Floating Label Animation Changes to a Subtle Golden Slate */
+.form-group input:focus ~ label,
+.form-group input:valid ~ label,
+.form-group textarea:focus ~ label,
+.form-group textarea:valid ~ label {
+  top: -16px;
+  font-size: 0.8rem;
+  color: var(--gold-focus-muted);
+  letter-spacing: 0.5px;
+}
+
+/* Premium Gold Button */
+.submit-btn {
+  background-color: var(--gold-primary);
+  color: var(--bg-dark-primary);
+  border: 1px solid var(--gold-primary);
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-  border-radius: 5px;
+  transition: all 0.4s ease-in-out;
+  border-radius: 4px;
 }
 
 .submit-btn:hover {
-  background-color: var(--primary-dark);
-  transform: translateY(-3px);
+  background-color: transparent;
+  color: var(--gold-hover);
+  box-shadow: 0 0 15px rgba(214, 175, 55, 0.4);
+  transform: translateY(-2px);
 }
 
 .success-message {
-margin-top: 10px;
-padding: 10px;
-border: 1px solid #28a745;
-background-color: #d4edda;
-color: #155724;
-border-radius: 5px;
-font-size: 1rem;
-text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid var(--gold-focus-muted);
+  background-color: rgba(212, 175, 55, 0.05);
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  text-align: center;
 }
+
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
   .content {
     flex-direction: column;
+    gap: 20px;
   }
 }

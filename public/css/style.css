@@ -3,13 +3,16 @@
    ========================================================================== */
 
 /* Core Application Wrapper Rules */
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
 body {
   font-family: "Plus Jakarta Sans", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #0d0f12 !important; /* Premium deep dark backdrop */
-  color: #f3f4f6 !important; /* Clean off-white primary typography */
+  background-color: var(--bg-dark-primary) !important;
+  color: var(--text-primary) !important;
 }
 
 .container {
@@ -232,42 +235,47 @@ body {
 
 .listing-card {
   transition: all 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
   border: none !important;
-  background: transparent !important; /* Removes card box outlines entirely */
+  background: transparent !important;
 }
 
+/* MODERN TYPOGRAPHY RULES APPLIED DIRECTLY FROM SCREENSHOT ASSIGNMENT */
 .listing-card .card-body {
   background: transparent !important;
   color: #ffffff !important;
+  padding: 12px 2px 0 2px;
+}
+
+.listing-card .card-title,
+.listing-card .card-body h5 {
+  font-size: 0.95rem !important;
+  font-weight: 500 !important; /* Premium Modern Geometric Weight */
+  letter-spacing: -0.1px;
+  color: #ffffff !important;
+  margin-bottom: 2px !important;
+}
+
+.listing-card .card-text,
+.listing-card .card-body p {
+  font-size: 0.88rem !important;
+  font-weight: 300 !important; /* Elegant light text weight matching request */
+  color: var(--text-muted) !important;
+  letter-spacing: 0.2px;
 }
 
 .listing-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
 }
 
 .listing-card:hover img {
-  filter: brightness(0.95);
+  filter: brightness(0.9);
 }
 
 .card-img-top {
   border-radius: 1rem !important;
   width: 100% !important;
   object-fit: cover;
-}
-
-.card-body {
-  padding: 0;
-}
-
-.card-text {
-  color: #ffffff !important;
-}
-
-.card-text b {
-  color: #ffffff !important;
-  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 576px) {
@@ -278,11 +286,6 @@ body {
 
 .card-img-overlay {
   opacity: 0;
-}
-
-.card-img-overlay:hover {
-  opacity: 0.05;
-  background-color: white;
 }
 
 /* ==========================================================================
@@ -312,7 +315,7 @@ body {
 }
 
 .btn-primary {
-  background-color:#ffd700  !important;
+  background-color: #ffd700 !important;
   border: none !important;
   display: inline-block;
   margin-top: 15px;
@@ -322,8 +325,8 @@ body {
 }
 
 .btn-primary:hover {
-  background-color:  white  !important;
-  color:#ffd700 ;
+  background-color: white !important;
+  color: #ffd700;
 }
 
 /* ==========================================================================
@@ -581,8 +584,8 @@ textarea:focus {
 }
 
 .custom-input::placeholder {
-    color: rgba(255, 255, 255, 0.6) !important;
-  }
+  color: rgba(255, 255, 255, 0.6) !important;
+}
 
 /* BUTTON (luxury inverse interaction) */
 .custom-submit-btn {

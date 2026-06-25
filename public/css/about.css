@@ -1,171 +1,231 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
 :root {
-  --primary-color: #fe424d;
-  --primary-dark: #e63946;
-  --text-color: #333;
-  --bg-color: #ffffff;
+  --bg-dark-primary: #0a0a0a;
+  --bg-dark-secondary: #121212;
+  --gold-primary: #d4af37;
+  --gold-hover: #f3e5ab;
+  --gold-muted: rgba(212, 175, 55, 0.15);
+  --text-muted: #a0a0a0;
+  --border-glow: rgba(212, 175, 55, 0.1);
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--bg-dark-primary) !important;
+  color: #ffffff !important;
 }
 
-.parallax {
+/* Parallax Section */
+.premium-hero {
+  position: relative;
+  height: 75vh;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 70vh; /* Reduced height */
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  border-radius: 15px;
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
-.parallax::before {
-  content: '';
+.premium-hero::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 15px;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 10, 0.4) 0%,
+    rgba(10, 10, 10, 0.95) 100%
+  );
 }
 
-.parallax-content {
+.premium-hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
 }
 
-.team-member {
-  text-align: center;
-  margin-bottom: 2rem;
+.gold-heading {
+  color: var(--gold-primary) !important;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-transform: uppercase;
 }
 
-.team-member img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease;
+/* Premium Buttons */
+.btn-gold {
+  background-color: var(--gold-primary) !important;
+  color: var(--bg-dark-primary) !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid var(--gold-primary) !important;
+  transition: all 0.4s ease-in-out !important;
+  border-radius: 4px;
+  padding: 12px 30px;
 }
 
-.team-member:hover img {
-  transform: scale(1.1);
+.btn-gold:hover {
+  background-color: transparent !important;
+  color: var(--gold-hover) !important;
+  box-shadow: 0 0 15px rgba(214, 175, 55, 0.4);
+  transform: translateY(-2px);
 }
 
-.card-about {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 25px 0;
+.btn-gold-outline {
+  background-color: transparent !important;
+  color: var(--gold-primary) !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid var(--gold-primary) !important;
+  transition: all 0.4s ease-in-out !important;
+  border-radius: 4px;
+  padding: 10px 24px;
 }
 
-.card-about:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.btn-gold-outline:hover {
+  background-color: var(--gold-primary) !important;
+  color: var(--bg-dark-primary) !important;
+  transform: translateY(-2px);
 }
 
-
+/* Structural Containers & Text */
 .section-title {
+  color: var(--gold-primary);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
   position: relative;
   display: inline-block;
-  padding-bottom: 10px;
-  margin-bottom: 30px;
 }
 
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -6px;
   width: 50px;
   height: 2px;
-  background-color: var(--primary-color);
+  background-color: var(--gold-primary);
 }
 
-.btn-custom {
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-  border-radius: 5px;
+.text-muted-custom {
+  color: var(--text-muted);
+  line-height: 1.8;
 }
 
-.btn-custom:hover {
-  background-color: var(--primary-dark);
-  transform: translateY(-3px);
+/* Modern Glass Cards */
+.card-premium {
+  background: var(--bg-dark-secondary);
+  border: 1px solid var(--border-glow) !important;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.stats-container {
-  background-color: white;
-  color: var(--primary-color);
-  padding: 50px 0;
+.card-premium:hover {
+  border-color: var(--gold-primary) !important;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 10px rgba(214, 175, 55, 0.05);
 }
 
-.stat-item {
-  text-align: center;
+.icon-gold {
+  color: var(--gold-primary);
+  margin-bottom: 1rem;
+}
+
+/* Stats Section */
+.stats-strip {
+  background: linear-gradient(90deg, #121212 0%, #1a1a1a 50%, #121212 100%);
+  border-top: 1px solid var(--border-glow);
+  border-bottom: 1px solid var(--border-glow);
+  padding: 4rem 0;
 }
 
 .stat-number {
   font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-weight: 800;
+  color: var(--gold-primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
 }
 
-.testimonial {
-  background-color: #f8f9fa;
-  padding: 30px;
-  border-radius: 10px;
-  margin-bottom: 30px;
+.stat-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
 }
 
-.testimonial-text {
-  font-style: italic;
-  margin-bottom: 20px;
+/* Team Section Styles */
+.team-wrapper {
+  text-align: center;
+  position: relative;
+  padding: 1.5rem;
 }
 
-.testimonial-author {
-  font-weight: bold;
+.team-avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border: 2px solid var(--border-glow);
+  transition: all 0.4s ease;
 }
 
-.location-card {
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.team-wrapper:hover .team-avatar {
+  border-color: var(--gold-primary);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(214, 175, 55, 0.2);
 }
 
-.location-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.team-role {
+  color: var(--gold-primary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.location-icon {
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 10px;
+.social-link {
+  color: var(--text-muted);
+  transition: color 0.3s ease;
 }
 
-.custom-icon {
-  color: var(--primary-color); 
+.social-link:hover {
+  color: var(--gold-primary);
 }
 
-.custom-icon i:hover {
-  color: #d12b35; /* Darker shade on hover */
+/* Testimonials */
+.testimonial-bubble {
+  background: var(--bg-dark-secondary);
+  border-left: 3px solid var(--gold-primary);
+  padding: 2rem;
+  border-radius: 0 6px 6px 0;
+  height: 100%;
 }
 
+/* Location Pins */
+.location-box {
+  padding: 2.5rem 1.5rem;
+  background: var(--bg-dark-secondary);
+  border: 1px solid var(--border-glow);
+  border-radius: 4px;
+  text-align: center;
+  height: 100%;
+}
+
+.location-box h3 {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+}
 @media (max-width: 768px) {
   .row > div {
     margin-bottom: 20px; /* Custom space for mobile view */
